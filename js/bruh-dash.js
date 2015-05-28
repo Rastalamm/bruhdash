@@ -22,10 +22,14 @@ global.bruhdash = {
     return newArr;
   },
 
-  difference: function() {
-
-
-
+  difference: function(array, vals) {
+    var newArr = [];
+    for(var i = 0; i < array.length; i++){
+      if(vals.indexOf(array[i]) === -1 ){
+        newArr.push(array[i]);
+      }
+    }
+    return newArr;
   },
 
   drop: function(array, n){
