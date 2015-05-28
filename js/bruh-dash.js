@@ -1,15 +1,29 @@
 var global = window || GLOBAL;
 
 global.bruhdash = {
-  chunk: function(){
+  chunk: function(array, size){
+    var newArr = [];
 
+  for(var i = 0; i < array.length; i += size){
+    newArr.push(array.slice(i, i + size));
+
+  }
+  return newArr;
   },
 
   compact: function() {
-
+       var newArr = [];
+       for(var i = 0; i < array.length; i++){
+       if(array[i]){
+          newArr.push(array[i]);
+        }
+   }
+    return newArr;
   },
 
   difference: function() {
+
+
 
   },
 
@@ -26,7 +40,7 @@ global.bruhdash = {
   },
 
   first: function () {
-      
+
   },
 
   indexOf: function () {
