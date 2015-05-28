@@ -6,9 +6,10 @@ global.bruhdash = {
 
   for(var i = 0; i < array.length; i += size){
     newArr.push(array.slice(i, i + size));
-
   }
+
   return newArr;
+
   },
 
   compact: function(array) {
@@ -27,7 +28,10 @@ global.bruhdash = {
 
   },
 
-  drop: function(){
+  drop: function(array, n){
+    var newArr = [];
+    newArr = array.slice(n, array.length);
+    return newArr;
 
   },
 
