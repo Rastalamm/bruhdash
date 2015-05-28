@@ -112,8 +112,10 @@ global.bruhdash = {
     return newArr;
   },
 
-  slice: function () {
-
+  slice: function (array) {
+    var newArr = [];
+    newArr = array.slice(0, (array.length-1));
+    return newArr;
   },
 
   take: function () {
