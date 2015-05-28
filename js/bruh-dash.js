@@ -39,8 +39,8 @@ global.bruhdash = {
 
   },
 
-  first: function () {
-
+  first: function (array) {
+    return array[0];
   },
 
   indexOf: function () {
