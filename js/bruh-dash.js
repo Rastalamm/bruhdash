@@ -77,8 +77,10 @@ global.bruhdash = {
     return newArr;
   },
 
-  last: function () {
-
+  last: function (array) {
+    var newArr = [];
+    newArr = array.slice(-1);
+    return newArr;
   },
 
   lastIndexof: function () {
