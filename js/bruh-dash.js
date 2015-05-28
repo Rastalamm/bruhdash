@@ -105,8 +105,11 @@ global.bruhdash = {
 
   },
 
-  rest: function () {
+  rest: function (array) {
+    var newArr = [];
+    newArr = array.slice(1);
 
+    return newArr;
   },
 
   slice: function () {
