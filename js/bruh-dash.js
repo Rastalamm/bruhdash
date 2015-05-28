@@ -91,8 +91,14 @@ global.bruhdash = {
     return newArr;
   },
 
-  pull: function () {
-
+  pull: function (array, num1, num2) {
+    var newArr = [];
+    for(var i = 0; i < array.length; i++){
+      if(array[i] === num1 || array[i] === num2){
+         newArr = array.splice(i, i+1);
+        }
+    }
+    return array;
   },
 
   pullAt: function () {
