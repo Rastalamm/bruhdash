@@ -141,6 +141,25 @@ global.bruhdash = {
 
   zip: function () {
 
+    var newArr = [];
+    var temp1 = [];
+    var temp2 = [];
+
+    for(var i = 0; i < arguments.length; i++){
+      temp1.push(arguments[i].shift(arguments[i][0]));
+    }
+    for(var i = 0; i < arguments.length; i++){
+      temp2.push(arguments[i].shift(arguments[i][0]));
+    }
+
+    var temp = [];
+    temp.push(temp1);
+    temp.push(temp2);
+
+    return temp;
+
+
+
   },
 
   unzip: function () {
