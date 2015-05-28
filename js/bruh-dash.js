@@ -129,8 +129,19 @@ global.bruhdash = {
     return newArr;
   },
 
-  takeRight: function () {
+  takeRight: function (array, start) {
+    var newArr = [];
+   if(start === undefined){
+      newArr = array.slice(array.length-1);
+    }else if (array.length - start < 0){
+      newArr = array.slice(0)
+    }else{
+      newArr = array.slice(array.length-start);
+    }
 
+
+
+    return newArr;
   },
 
   zip: function () {
