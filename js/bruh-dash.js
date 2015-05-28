@@ -60,7 +60,6 @@ global.bruhdash = {
   },
 
   indexOf: function (array, value) {
-    debugger;
     var newArr = [];
     if(arguments[2] != 'undefined'){
       newArr = array.indexOf(value, arguments[2]);
