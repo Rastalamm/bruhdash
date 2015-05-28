@@ -61,18 +61,20 @@ global.bruhdash = {
 
   indexOf: function (array, value, n) {
 
-    //need to figure out the SameValueZero part of this
+    /*need to figure out the SameValueZero part of this
     if(){
       array.indexOf(value);
     }else{
       array.lastIndexOf(value);
     }
 
-    console.log(array);
+    console.log(array);*/
   },
 
-  inital: function () {
-
+  inital: function (array) {
+    var newArr = [];
+    newArr = array.slice(0, -1);
+    return newArr;
   },
 
   last: function () {
