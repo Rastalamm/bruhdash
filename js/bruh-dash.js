@@ -140,26 +140,15 @@ global.bruhdash = {
   },
 
   zip: function () {
-
-    var newArr = [];
-    var temp1 = [];
-    var temp2 = [];
-
-    for(var i = 0; i < arguments.length; i++){
-      temp1.push(arguments[i].shift(arguments[i][0]));
-    }
-    for(var i = 0; i < arguments.length; i++){
-      temp2.push(arguments[i].shift(arguments[i][0]));
-    }
-
-    var temp = [];
-    temp.push(temp1);
-    temp.push(temp2);
-
-    return temp;
-
-
-
+    var finalArr = [];
+      for(var i = 0; i < arguments[0].length; i++){
+        var temp = [];
+          for(var j = 0; j < arguments.length; j++){
+            temp.push(arguments[j][i]);
+          }
+        finalArr.push(temp);
+      }
+    return finalArr;
   },
 
   unzip: function () {
