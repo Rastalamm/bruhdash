@@ -81,8 +81,14 @@ global.bruhdash = {
     return newArr;
   },
 
-  lastIndexof: function () {
-
+  lastIndexof: function (array, value) {
+    var newArr = [];
+    if(arguments[2] !== undefined){
+      newArr = array.lastIndexOf(value, arguments[2]);
+    }else{
+      newArr = array.lastIndexOf(value);
+    }
+    return newArr;
   },
 
   pull: function () {
