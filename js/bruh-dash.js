@@ -11,7 +11,7 @@ global.bruhdash = {
   return newArr;
   },
 
-  compact: function() {
+  compact: function(array) {
        var newArr = [];
        for(var i = 0; i < array.length; i++){
        if(array[i]){
