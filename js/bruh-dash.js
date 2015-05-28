@@ -41,8 +41,18 @@ global.bruhdash = {
     return newArr;
   },
 
-  fill: function() {
+  fill: function(array, a) {
+    //example 3 is not working
 
+    newArr = [];
+
+    for(var i =0; i < array.length; i++){
+
+      newArr.push(a);
+
+    }
+
+    return newArr;
   },
 
   first: function (array) {
