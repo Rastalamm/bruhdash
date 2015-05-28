@@ -35,8 +35,10 @@ global.bruhdash = {
 
   },
 
-  dropRight: function() {
-
+  dropRight: function(array, n) {
+    var newArr = [];
+    newArr = array.slice(0, -n);
+    return newArr;
   },
 
   fill: function() {
