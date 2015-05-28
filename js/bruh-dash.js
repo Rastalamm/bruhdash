@@ -3,13 +3,10 @@ var global = window || GLOBAL;
 global.bruhdash = {
   chunk: function(array, size){
     var newArr = [];
-
-  for(var i = 0; i < array.length; i += size){
-    newArr.push(array.slice(i, i + size));
-  }
-
+    for(var i = 0; i < array.length; i += size){
+      newArr.push(array.slice(i, i + size));
+    }
   return newArr;
-
   },
 
   compact: function(array) {
@@ -36,7 +33,6 @@ global.bruhdash = {
     var newArr = [];
     newArr = array.slice(n, array.length);
     return newArr;
-
   },
 
   dropRight: function(array, n) {
@@ -69,7 +65,6 @@ global.bruhdash = {
     }else{
       newArr = array.indexOf(value);
     }
-
     return newArr;
   },
 
@@ -112,7 +107,6 @@ global.bruhdash = {
   rest: function (array) {
     var newArr = [];
     newArr = array.slice(1);
-
     return newArr;
   },
 
