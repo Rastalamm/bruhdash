@@ -138,9 +138,6 @@ global.bruhdash = {
     }else{
       newArr = array.slice(array.length-start);
     }
-
-
-
     return newArr;
   },
 
