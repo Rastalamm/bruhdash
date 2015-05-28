@@ -42,16 +42,15 @@ global.bruhdash = {
   },
 
   fill: function(array, a) {
-    //example 3 is not working
-
     newArr = [];
-
-    for(var i =0; i < array.length; i++){
-
+    if(arguments[2] === undefined){
+      for(var i =0; i < array.length; i++){
       newArr.push(a);
-
+      }
+    }else{
+      array.splice(arguments[2], 1,a);
+      newArr = array;
     }
-
     return newArr;
   },
 
