@@ -118,8 +118,15 @@ global.bruhdash = {
     return newArr;
   },
 
-  take: function () {
-
+  take: function (array, end) {
+    var newArr = [];
+    if(end === undefined)
+    {
+      newArr = array.slice(0,1);
+    }else{
+      newArr = array.slice(0,end);
+    }
+    return newArr;
   },
 
   takeRight: function () {
