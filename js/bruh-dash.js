@@ -149,7 +149,12 @@ global.bruhdash = {
 
   },
 
-  without: function() {
-
+  without: function(array, num1, num2) {
+  for(var i =0; i <= array.length; i++){
+      if(array.indexOf(num1) >= 0 || array.indexOf(num2) >= 0 ){
+        array.splice(0,1);
+      }
+  }
+    return array;
   }
 };
