@@ -3,16 +3,16 @@ var global = window || GLOBAL;
 global.bruhdash = {
   chunk : function ( array, size ) {
     var newArr = [];
-    for ( var i = 0; i < array.length; i += size ) {
+    for (var i = 0; i < array.length; i += size) {
       newArr.push(array.slice(i, i + size));
     }
-  return newArr;
+    return newArr;
   },
 
   compact : function(array) {
     var newArr = [];
     for ( var i = 0; i < array.length; i++ ) {
-      if ( array[i] ) {
+      if (array[i]) {
         newArr.push(array[i]);
       }
     }
@@ -21,8 +21,8 @@ global.bruhdash = {
 
   difference : function ( array, vals) {
     var newArr = [];
-    for(var i = 0; i < array.length; i++){
-      if(vals.indexOf(array[i]) === -1 ){
+    for (var i = 0; i < array.length; i++) {
+      if (vals.indexOf(array[i]) === -1) {
         newArr.push(array[i]);
       }
     }
