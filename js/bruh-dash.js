@@ -101,14 +101,14 @@ global.bruhdash = {
   },
 
   pullAt : function ( array ) {
-    //need to correct what info gets pulled out
-
     var newArr = [];
-    for ( var i = 1; i < arguments.length; i++ ) {
-      array.splice(arguments[i], 1 );
+    var arguments = Array.prototype.slice.call( arguments, 1);
+    arguments.sort(function(a, b){return a-b});
+    arguments.reverse();
+    for ( var i = 0; i < arguments.length; i++ ) {
+      array.splice( arguments[i], 1 );
     }
-    newArr.push(array);
-    return newArr;
+    return array;
   },
 
   rest: function (array) {
