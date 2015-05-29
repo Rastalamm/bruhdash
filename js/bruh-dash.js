@@ -1,25 +1,25 @@
 var global = window || GLOBAL;
 
 global.bruhdash = {
-  chunk: function(array, size){
+  chunk : function ( array, size ) {
     var newArr = [];
-    for(var i = 0; i < array.length; i += size){
+    for ( var i = 0; i < array.length; i += size ) {
       newArr.push(array.slice(i, i + size));
     }
   return newArr;
   },
 
-  compact: function(array) {
-       var newArr = [];
-       for(var i = 0; i < array.length; i++){
-       if(array[i]){
-          newArr.push(array[i]);
-        }
-   }
+  compact : function(array) {
+    var newArr = [];
+    for ( var i = 0; i < array.length; i++ ) {
+      if ( array[i] ) {
+        newArr.push(array[i]);
+      }
+    }
     return newArr;
   },
 
-  difference: function(array, vals) {
+  difference : function ( array, vals) {
     var newArr = [];
     for(var i = 0; i < array.length; i++){
       if(vals.indexOf(array[i]) === -1 ){
@@ -132,7 +132,7 @@ global.bruhdash = {
    if(start === undefined){
       newArr = array.slice(array.length-1);
     }else if (array.length - start < 0){
-      newArr = array.slice(0)
+      newArr = array.slice(0);
     }else{
       newArr = array.slice(array.length-start);
     }
@@ -153,9 +153,10 @@ global.bruhdash = {
 
   unzip: function (array) {
     //Almost there...
-    //Need to account for array = [];
+    //Need to account for the lengths. If different arrays have diff lengths.
+  if ( array.length > 0 ) {
 
-  var newArr = [];
+    var newArr = [];
     for(var i = 0; i < array[0].length; i++){ //
       var temp = [];
 
@@ -165,6 +166,12 @@ global.bruhdash = {
       newArr.push(temp);
     }
     return newArr;
+  }else{
+    return 'Give me an array';
+  }
+
+
+
   },
 
   without: function(array, num1, num2) {
