@@ -151,21 +151,20 @@ global.bruhdash = {
     return finalArr;
   },
 
-  unzip: function () {
+  unzip: function (array) {
     //Almost there...
-  /*
+    //Need to account for array = [];
+
   var newArr = [];
-    for(var i = 0; i < arguments[0].length; i++){ //
+    for(var i = 0; i < array[0].length; i++){ //
       var temp = [];
 
-      for(var j = 0; j < arguments.length; j++){ //
-        temp.push(arguments[j]);
+      for(var j = 0; j < array.length; j++){ //
+        temp.push(array[j][i]);
       }
-
       newArr.push(temp);
     }
-
-    return newArr;*/
+    return newArr;
   },
 
   without: function(array, num1, num2) {
