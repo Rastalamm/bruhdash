@@ -100,8 +100,15 @@ global.bruhdash = {
     return array;
   },
 
-  pullAt: function () {
+  pullAt : function ( array ) {
+    //need to correct what info gets pulled out
 
+    var newArr = [];
+    for ( var i = 1; i < arguments.length; i++ ) {
+      array.splice(arguments[i], 1 );
+    }
+    newArr.push(array);
+    return newArr;
   },
 
   rest: function (array) {
