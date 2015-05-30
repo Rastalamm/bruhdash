@@ -108,20 +108,15 @@ global.bruhdash = {
   },
 
   pull: function (array) {
-    var newArr = [];
-    for(var i = 0; i < array.length; i++){
-      var found = false;
-      for(var k = 1; k <= arguments.length; k++){
-        if(array[i] === arguments[k]){
-          found = true;
+        for(var i = 0; i < array.length; i++){
+          for(var k = 1; k < arguments.length; k++){
+            if(array[i] === arguments[k]){
+              array.splice(i, 1);
+              i--;
+            }
+          }
         }
-      }
-
-      if(found === false){
-        newArr.push(array[i]);
-      }
-    }
-    return newArr;
+        return array;
   },
 
   pullAt : function ( array ) {
@@ -223,11 +218,28 @@ global.bruhdash = {
   },
 
   without: function(array, num1, num2) {
+    var newArr = [];
+    for(var i = 0; i < array.length; i++){
+      var found = false;
+      for(var k = 1; k <= arguments.length; k++){
+        if(array[i] === arguments[k]){
+          found = true;
+        }
+      }
+
+      if(found === false){
+        newArr.push(array[i]);
+      }
+    }
+    return newArr;
+  }
+/*
+
   for(var i =0; i <= array.length; i++){
       if(array.indexOf(num1) >= 0 || array.indexOf(num2) >= 0 ){
         array.splice(0,1);
       }
   }
     return array;
-  }
+  }*/
 };
