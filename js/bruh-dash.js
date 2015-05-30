@@ -31,7 +31,7 @@ global.bruhdash = {
 
   drop: function(array, n){
     var newArr = [];
-    if (arguments[1] === undefined){
+    if (n === undefined){
       n = 1;
       newArr = array.splice(0, n);
     }else{
