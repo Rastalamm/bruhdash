@@ -33,9 +33,9 @@ global.bruhdash = {
     var newArr = [];
     if (n === undefined){
       n = 1;
-      newArr = array.splice(0, n);
+      array.splice(0, n);
     }else{
-      newArr = array.splice(0, n);
+      array.splice(0, n);
     }
     return array;
   },
