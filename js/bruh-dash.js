@@ -31,14 +31,13 @@ global.bruhdash = {
 
   drop: function(array, n){
     var newArr = [];
-    if (n === null ){
-
-    newArr = array.slice(n, array.length);
+    if (arguments[1] === undefined){
+      n = 1;
+      newArr = array.splice(0, n);
     }else{
-     n = 1;
-      newArr = array.slice(n, array.length);
+      newArr = array.splice(0, n);
     }
-    return newArr;
+    return array;
   },
 
   dropRight: function(array, n) {
