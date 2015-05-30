@@ -42,7 +42,15 @@ global.bruhdash = {
 
   dropRight: function(array, n) {
     var newArr = [];
-    newArr = array.slice(0, -n);
+    if(n === undefined){
+      n = 1;
+      newArr = array.slice(0, array.length - n);
+    }else{
+      if(array.length-n < 0){
+      n = array.length;
+    }
+    newArr = array.slice(0, array.length - n);
+    }
     return newArr;
   },
 
