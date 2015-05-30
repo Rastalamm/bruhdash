@@ -107,14 +107,21 @@ global.bruhdash = {
     return newArr;
   },
 
-  pull: function (array, num1, num2) {
+  pull: function (array) {
     var newArr = [];
     for(var i = 0; i < array.length; i++){
-      if(array[i] === num1 || array[i] === num2){
-         newArr = array.splice(i, i+1);
+      var found = false;
+      for(var k = 1; k <= arguments.length; k++){
+        if(array[i] === arguments[k]){
+          found = true;
         }
+      }
+
+      if(found === false){
+        newArr.push(array[i]);
+      }
     }
-    return array;
+    return newArr;
   },
 
   pullAt : function ( array ) {
