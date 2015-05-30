@@ -31,7 +31,13 @@ global.bruhdash = {
 
   drop: function(array, n){
     var newArr = [];
+    if (n === null ){
+
     newArr = array.slice(n, array.length);
+    }else{
+     var n = 1;
+      newArr = array.slice(n, array.length);
+    }
     return newArr;
   },
 
@@ -159,26 +165,31 @@ global.bruhdash = {
   },
 
   unzip: function (array) {
-    //Almost there...
-    //Need to account for the lengths. If different arrays have diff lengths.
-  if ( array.length > 0 ) {
-
-    var newArr = [];
-    for(var i = 0; i < array[0].length; i++){ //
-      var temp = [];
-
-      for(var j = 0; j < array.length; j++){ //
-        temp.push(array[j][i]);
+    var longestNumber;
+      for (var i = 0; i < array.length -1; i++){
+      if(array[i].length <= array[i + 1].length){
+        longestNumber = array[i + 1].length;
+      }else{
+        longestNumber = array[i].length;
       }
-      newArr.push(temp);
     }
-    return newArr;
-  }else{
-    return 'Give me an array';
-  }
-
-
-
+    if ( array.length > 0 ) {
+      var newArr = [];
+      for(var i = 0; i < longestNumber; i++){ //
+        var temp = [];
+        for(var j = 0; j < array.length; j++){ //
+          if(array[j][i] === undefined || array[j] === undefined){
+            temp.push(null);
+          }else{
+          temp.push(array[j][i]);
+          }
+        }
+        newArr.push(temp);
+      }
+      return newArr;
+    }else{
+      return 'Give me an array';
+    }
   },
 
   without: function(array, num1, num2) {
