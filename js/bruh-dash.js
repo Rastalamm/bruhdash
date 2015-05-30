@@ -35,7 +35,7 @@ global.bruhdash = {
 
     newArr = array.slice(n, array.length);
     }else{
-     var n = 1;
+     n = 1;
       newArr = array.slice(n, array.length);
     }
     return newArr;
@@ -108,11 +108,11 @@ global.bruhdash = {
 
   pullAt : function ( array ) {
     var newArr = [];
-    var arguments = Array.prototype.slice.call( arguments, 1);
-    arguments.sort(function(a, b){return a-b});
-    arguments.reverse();
-    for ( var i = 0; i < arguments.length; i++ ) {
-      array.splice( arguments[i], 1 );
+    var args = Array.prototype.slice.call( arguments, 1);
+    args.sort(function(a, b){return a-b;});
+    args.reverse();
+    for ( var i = 0; i < args.length; i++ ) {
+      array.splice( args[i], 1 );
     }
     return array;
   },
@@ -153,11 +153,23 @@ global.bruhdash = {
   },
 
   zip: function () {
+    var longestNumber;
+      for (var q = 0; q < arguments.length -1; q++){
+      if(arguments[q].length <= arguments[q + 1].length){
+        longestNumber = arguments[q + 1].length;
+      }else{
+        longestNumber = arguments[q].length;
+      }
+    }
     var finalArr = [];
-      for(var i = 0; i < arguments[0].length; i++){
+      for(var i = 0; i < longestNumber; i++){
         var temp = [];
           for(var j = 0; j < arguments.length; j++){
-            temp.push(arguments[j][i]);
+            if(arguments[j][i] === undefined || arguments[j] === undefined){
+              temp.push(null);
+            }else{
+              temp.push(arguments[j][i]);
+            }
           }
         finalArr.push(temp);
       }
@@ -166,11 +178,11 @@ global.bruhdash = {
 
   unzip: function (array) {
     var longestNumber;
-      for (var i = 0; i < array.length -1; i++){
-      if(array[i].length <= array[i + 1].length){
-        longestNumber = array[i + 1].length;
+      for (var q = 0; q < array.length -1; q++){
+      if(array[q].length <= array[q + 1].length){
+        longestNumber = array[q + 1].length;
       }else{
-        longestNumber = array[i].length;
+        longestNumber = array[q].length;
       }
     }
     if ( array.length > 0 ) {
